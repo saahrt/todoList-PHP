@@ -33,7 +33,7 @@ Neste projeto, optei por implementar toda a lógica e interface em um único arq
 
 ## 🚀 Tecnologias Utilizadas
 
-- ✅ **Frontend:** HTML5, CSS3, Bootstrap (parcial)
+- ✅ **Frontend:** HTML5, CSS3
 - ✅ **Backend:** PHP Procedural
 - ✅ **Banco de Dados:** MySQL
 
