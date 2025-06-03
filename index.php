@@ -6,8 +6,9 @@ if ($connection -> connect_errno) {
 
 if (isset($_POST["addTarefa"])) {
     $task = $_POST["tarefa"];
+    $descricao = $_POST["descricao"];
     if (!empty($task)) {
-        $connection -> query("INSERT INTO tasks (title) VALUES ('$task')");
+        $connection -> query("INSERT INTO tasks (title, description) VALUES ('$task', '$descricao')");
     }
     header("Location: index.php");
     exit;
@@ -39,8 +40,9 @@ if (isset($_GET["edit"])) {
 if (isset($_POST["updateTarefa"])) {
     $id = $_POST["id"];
     $newTitle = $_POST["tarefa"];
+    $newDescricao = $_POST["descricao"];
     if (!empty($newTitle)) {
-        $connection -> query("UPDATE tasks SET title = '$newTitle' WHERE id = '$id'");
+        $connection -> query("UPDATE tasks SET title = '$newTitle', description = '$newDescricao' WHERE id = '$id'");
     }
     header("Location: index.php");
     exit;
@@ -156,6 +158,7 @@ $result = $connection -> query($sql);
         <!-- Formulário de add/edit -->
         <form action="index.php" method="post">
             <input type="text" name="tarefa" placeholder="Insira nova tarefa" value="<?php echo $editTask ? $editTask['title'] : ''; ?>" required>
+            <input type="text" name="descricao" placeholder="Descrição da tarefa" value="<?php echo $editTask ? htmlspecialchars($editTask['description']) : ''; ?>">
             
             <?php if ($editTask): ?>
                 <input type="hidden" name="id" value="<?php echo $editTask['id']; ?>">
@@ -180,7 +183,10 @@ $result = $connection -> query($sql);
         <ul>
             <?php while ($row = $result->fetch_assoc()): ?>
                 <li class="<?php echo $row["is_completed"] ? 'is_completed' : ''; ?>">
-                    <strong><?php echo htmlspecialchars($row["title"]); ?></strong>
+                    <div>
+                        <strong><?php echo htmlspecialchars($row["title"]); ?></strong>
+                        <p><?php echo htmlspecialchars($row["description"]); ?></p>
+                    </div>
                     <div class="actions">
                         <button class="opcoes" type="submit" name="complete"><a href="index.php?complete=<?php echo $row['id'];?>&filter=<?php echo $filtro; ?>">Completar</a></button>
                         <button class="opcoes" type="submit" name="edit"><a href="index.php?edit=<?php echo $row['id'];?>&filter=<?php echo $filtro;  ?>">Editar</a></button>
