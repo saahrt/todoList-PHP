@@ -1,9 +1,12 @@
+CREATE DATABASE IF NOT EXISTS todo_db;
+USE todo_db;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/06/2025 às 20:22
+-- Tempo de geração: 03/06/2025 às 22:28
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -41,9 +44,9 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `title`, `description`, `is_completed`, `created_at`, `updated_at`) VALUES
-(19, 'olA', NULL, 0, '2025-06-03 14:07:52', '2025-06-03 14:07:52'),
-(20, 'comprar pãooo', NULL, 1, '2025-06-03 14:08:57', '2025-06-03 14:26:07'),
-(21, 'ttt', NULL, 1, '2025-06-03 14:51:30', '2025-06-03 14:51:56');
+(24, 'Responder mensagens', '', 1, '2025-06-03 16:43:06', '2025-06-03 17:08:11'),
+(27, 'Pagar academia', '', 0, '2025-06-03 17:05:48', '2025-06-03 17:06:29'),
+(28, 'Mercado', 'comprar pão, manteiga e mussarela.', 0, '2025-06-03 17:05:52', '2025-06-03 17:07:58');
 
 --
 -- Índices para tabelas despejadas
@@ -63,7 +66,7 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT de tabela `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
