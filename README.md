@@ -47,3 +47,7 @@ CREATE TABLE tasks (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+## Pontos a melhorar
+
+Neste projeto, optei por implementar toda a lógica e interface em um único arquivo PHP para simplificar o desenvolvimento, dada a simplicidade da aplicação e o prazo. Reconheço que, para projetos mais robustos e escaláveis, a separação em múltiplos arquivos seguindo o padrão MVC e o uso de frameworks são essenciais para melhor organização, manutenção e reaproveitamento de código. Estou ciente dessas boas práticas e pretendo aplicá-las em projetos futuros
