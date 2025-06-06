@@ -18,7 +18,7 @@ Neste projeto, optei por implementar toda a lógica e interface em um único arq
 - ✅ Status da tarefa (Pendente ou Concluída)
 - ✅ Marcar tarefas como concluídas
 - ✅ Filtro de tarefas por status (Todas, Pendentes, Concluídas)
-- ✅ Layout responsivo básico (uso simples de Bootstrap)
+- ✅ Layout responsivo básico
 - ✅ Banco de dados MySQL funcional
 
 ---
